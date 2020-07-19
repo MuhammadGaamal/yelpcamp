@@ -19,7 +19,8 @@ var commentsroutes = require("./routes/comments"),
 
 // connect to the database
 //mongodb://localhost/yelp-camp
-mongoose.connect( "mongodb+srv://yelpcamp:<kkk000k@>@yelpcamp.885ts.mongodb.net/<yelpcamp>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+// mongodb+srv://yelpcamp:<kkk000k@>@yelpcamp.885ts.mongodb.net/<yelpcamp>?retryWrites=true&w=majority
+mongoose.connect( "mongodb://localhost/yelp-camp", { useNewUrlParser: true, useUnifiedTopology: true });
 // mongoose.set('useFindAndModify', false);
 
 
