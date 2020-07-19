@@ -18,8 +18,8 @@ var commentsroutes = require("./routes/comments"),
     authroutes = require("./routes/auth");
 
 // connect to the database
-var url = process.env.DATABASEURL || "mongodb://localhost/yelp-camp"
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+//mongodb://localhost/yelp-camp
+mongoose.connect( "mongodb+srv://yelpcamp:<kkk000k@>@yelpcamp.885ts.mongodb.net/<yelpcamp>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 // mongoose.set('useFindAndModify', false);
 
 
