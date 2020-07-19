@@ -1,0 +1,82 @@
+body {
+    background-color: #000;
+}
+
+#landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+}
+
+#landing-header h1 {
+    color: #fff;
+}
+
+.slideshow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 50s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+    background-image: url(https://live.staticflickr.com/5181/5669486704_4e0156cb50_b.jpg)
+}
+.slideshow li:nth-child(2) {
+    background-image: url(https://yallabook.com/blog/admincp/userfiles/%D8%B1%D8%A7%D8%B3%20%D8%A7%D9%84%D8%B4%D9%8A%D8%B7%D8%A7%D9%86.jpg);
+    animation-delay: 10s;
+}
+.slideshow li:nth-child(3) {
+    background-image: url(https://egyptianstreets.com/wp-content/uploads/2016/01/Ras-Shitan-MohamedHakem.jpg);
+    animation-delay: 20s;
+}
+.slideshow li:nth-child(4) {
+    background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/0f/38/a2/3b/marsa-shagra-village.jpg);
+    animation-delay: 30s;
+}
+.slideshow li:nth-child(5) {
+    background-image: url(https://lh3.googleusercontent.com/proxy/NNLPgU1DgbPNZdq4za3Vh2cmG4ryZjzIIKBnffnmrTorF8PlDBsH_lU7OL1RcLQLzZxDaQW76alldp3g8Bm0FiczGaOKM8Pl4DlMnsb9awDGWLSH__zGJrp832McmDJKkS1p0Pvio4jZmZUYNjERCCicbQb0zZFp1gJputDs6XWER6vRRsESnA);
+    animation-delay: 40s;
+}
+
+@keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    10% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    20% {
+        opacity: 1
+    }
+    30% {
+        opacity: 0
+    }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}
