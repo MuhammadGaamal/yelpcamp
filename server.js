@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config({path: "variables.env"});
 var express                  = require("express"),
     app                      = express(),
     bodyparse                = require("body-parser"),
@@ -20,7 +20,7 @@ var commentsroutes = require("./routes/comments"),
 // connect to the database
 //mongodb://localhost/yelp-camp
 // mongodb+srv://yelpcamp:jimmy@yelpcamp.885ts.mongodb.net/yelpcamp?retryWrites=true&w=majority
-mongoose.connect( "mongodb+srv://yelpcamp:jimmy@yelpcamp.885ts.mongodb.net/yelpcamp?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect( process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true})
 // mongoose.set('useFindAndModify', false);
 
 
@@ -61,6 +61,8 @@ app.use("/campgrounds", campgroundsroutes);
 app.use( "/",authroutes);
 app.use("/campgrounds/:id/reviews", reviewRoutes);
 
-app.listen(3000, function () {
+const host = process.env.HOST || "0.0.0.0";
+const port = process.env.PORT || 3000;
+app.listen(host, port, function () {
     console.log("Server Started");
 });

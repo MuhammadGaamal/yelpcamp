@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config({path: "variables.env"});
 var express = require("express");
 var router = express.Router();
 var Campgrounds = require("../models/campground");
@@ -23,8 +23,8 @@ var upload = multer({ storage: storage, fileFilter: imageFilter})
 var cloudinary = require("cloudinary");
 cloudinary.config({
     cloud_name: "dlhwxlvam",
-    api_key: "935795826849629",
-    api_secret: "6MJpmvQoxEoDkL000B6HvVtrEuI"
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
 
