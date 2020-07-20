@@ -61,8 +61,9 @@ app.use("/campgrounds", campgroundsroutes);
 app.use( "/",authroutes);
 app.use("/campgrounds/:id/reviews", reviewRoutes);
 
+// const server = require('http').createServer();
 const host = process.env.HOST || "0.0.0.0";
 const port = process.env.PORT || 3000;
-app.listen(host, port, function () {
-    console.log("Server Started");
+app.listen(port, function () {
+    console.log(`Listening on ${port}`);
 });
