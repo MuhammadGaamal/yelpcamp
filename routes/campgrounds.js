@@ -23,8 +23,8 @@ var upload = multer({ storage: storage, fileFilter: imageFilter})
 var cloudinary = require("cloudinary");
 cloudinary.config({
     cloud_name: "dlhwxlvam",
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
+    api_key: "935795826849629",
+    api_secret: "6MJpmvQoxEoDkL000B6HvVtrEuI"
 });
 
 
