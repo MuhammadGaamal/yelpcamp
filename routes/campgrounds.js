@@ -173,19 +173,19 @@ router.delete("/:id", middleware.campgroundAuthorization ,function (req, res) {
             try {
                 await cloudinary.v2.uploader.destroy(campground.imageId);
                 // deletes all comments associated with the campground
-                Comment.remove({"_id": {$in: campground.comments}}, function (err) {
+                Comment.deleteOne({"_id": {$in: campground.comments}}, function (err) {
                     if (err) {
                         console.log(err);
                         return res.redirect("/campgrounds");
                     }
                     // deletes all reviews associated with the campground
-                    Review.remove({"_id": {$in: campground.reviews}}, function (err) {
+                    Review.deleteOne({"_id": {$in: campground.reviews}}, function (err) {
                         if (err) {
                             console.log(err);
                             return res.redirect("/campgrounds");
                         }
                         //  delete the campground
-                        campground.remove();
+                        campground.deleteOne();
                         req.flash("success", "Campground deleted successfully!");
                         res.redirect("/campgrounds");
                     });
